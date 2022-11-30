@@ -23,6 +23,12 @@ namespace DietApp
 
         #region Methods
 
+        private void ClearForm()
+        {
+            txtEmail.Clear();
+            txtPassword.Clear();
+        }
+
         private void GoToRegisterForm()
         {
             var form = new RegisterFormLoginPart(db);
@@ -65,28 +71,51 @@ namespace DietApp
                 return true;
         }
 
+        private void ChangePasswordVisibility()
+        {
+            if (btnPasswordVisibility.Text == "Show")
+            {
+                txtPassword.PasswordChar = new char();
+                btnPasswordVisibility.Text = "Hide";
+            }
+            else
+            {
+                txtPassword.PasswordChar = '*';
+                btnPasswordVisibility.Text = "Show";
+            }
+        }
+
         #endregion
 
         #region Events
 
         private void btnGoToMainForm_Click(object sender, EventArgs e)
         {
-            GoToMainForm(CheckLoginCredentials());
+            bool isValid = CheckLoginCredentials();
+            ClearForm();
+            GoToMainForm(isValid);
         }
 
         private void btnGoToRegisterForm_Click(object sender, EventArgs e)
         {
+            ClearForm();
             GoToRegisterForm();
         }
 
         private void btnGoToPasswordResetForm_Click(object sender, EventArgs e)
         {
+            ClearForm();
             GoToPasswordResetForm();
         }
 
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void btnPasswordVisibility_Click(object sender, EventArgs e)
+        {
+            ChangePasswordVisibility();
         }
 
         #endregion

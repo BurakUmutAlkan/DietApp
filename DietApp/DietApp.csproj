@@ -84,6 +84,12 @@
     <Compile Include="UI\RegisterFormLoginPart.Designer.cs">
       <DependentUpon>RegisterFormLoginPart.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\RegisterFormPersonalPart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\RegisterFormPersonalPart.Designer.cs">
+      <DependentUpon>RegisterFormPersonalPart.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

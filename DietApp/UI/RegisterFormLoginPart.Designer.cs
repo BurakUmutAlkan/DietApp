@@ -34,7 +34,7 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.lblPasswordVisibility = new System.Windows.Forms.Label();
+            this.btnPasswordVisibility = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -66,6 +66,7 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(46, 143);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(240, 29);
             this.txtPassword.TabIndex = 1;
             // 
@@ -79,6 +80,7 @@
             this.btnNext.TabIndex = 3;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnCancel
             // 
@@ -89,23 +91,25 @@
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // lblPasswordVisibility
+            // btnPasswordVisibility
             // 
-            this.lblPasswordVisibility.AutoSize = true;
-            this.lblPasswordVisibility.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lblPasswordVisibility.Location = new System.Drawing.Point(292, 146);
-            this.lblPasswordVisibility.Name = "lblPasswordVisibility";
-            this.lblPasswordVisibility.Size = new System.Drawing.Size(49, 21);
-            this.lblPasswordVisibility.TabIndex = 4;
-            this.lblPasswordVisibility.Text = "Show";
+            this.btnPasswordVisibility.AutoSize = true;
+            this.btnPasswordVisibility.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnPasswordVisibility.Location = new System.Drawing.Point(292, 146);
+            this.btnPasswordVisibility.Name = "btnPasswordVisibility";
+            this.btnPasswordVisibility.Size = new System.Drawing.Size(49, 21);
+            this.btnPasswordVisibility.TabIndex = 4;
+            this.btnPasswordVisibility.Text = "Show";
+            this.btnPasswordVisibility.Click += new System.EventHandler(this.btnPasswordVisibility_Click);
             // 
             // RegisterFormLoginPart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(354, 290);
-            this.Controls.Add(this.lblPasswordVisibility);
+            this.Controls.Add(this.btnPasswordVisibility);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.txtPassword);
@@ -119,6 +123,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create New Account";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegisterFormLoginPart_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,6 +137,6 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Label lblPasswordVisibility;
+        private System.Windows.Forms.Label btnPasswordVisibility;
     }
 }

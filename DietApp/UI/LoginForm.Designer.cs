@@ -36,6 +36,7 @@
             this.btnGoToMainForm = new System.Windows.Forms.Button();
             this.btnGoToRegisterForm = new System.Windows.Forms.Label();
             this.btnGoToPasswordResetForm = new System.Windows.Forms.Label();
+            this.btnPasswordVisibility = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,6 +119,17 @@
             this.btnGoToPasswordResetForm.Text = "Reset Password";
             this.btnGoToPasswordResetForm.Click += new System.EventHandler(this.btnGoToPasswordResetForm_Click);
             // 
+            // btnPasswordVisibility
+            // 
+            this.btnPasswordVisibility.AutoSize = true;
+            this.btnPasswordVisibility.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnPasswordVisibility.Location = new System.Drawing.Point(313, 444);
+            this.btnPasswordVisibility.Name = "btnPasswordVisibility";
+            this.btnPasswordVisibility.Size = new System.Drawing.Size(49, 21);
+            this.btnPasswordVisibility.TabIndex = 1;
+            this.btnPasswordVisibility.Text = "Show";
+            this.btnPasswordVisibility.Click += new System.EventHandler(this.btnPasswordVisibility_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -128,6 +140,7 @@
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.btnGoToPasswordResetForm);
+            this.Controls.Add(this.btnPasswordVisibility);
             this.Controls.Add(this.btnGoToRegisterForm);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.pbLogo);
@@ -155,6 +168,7 @@
         private System.Windows.Forms.Button btnGoToMainForm;
         private System.Windows.Forms.Label btnGoToRegisterForm;
         private System.Windows.Forms.Label btnGoToPasswordResetForm;
+        private System.Windows.Forms.Label btnPasswordVisibility;
     }
 }
 
