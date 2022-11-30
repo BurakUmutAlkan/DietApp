@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace DietApp.UI
 {
-    public partial class RegisterForm : Form
+    public partial class RegisterFormLoginPart : Form
     {
         private readonly ApplicationDbContext _db;
 
-        public RegisterForm(ApplicationDbContext db)
+        public RegisterFormLoginPart(ApplicationDbContext db)
         {
             InitializeComponent();
             _db = db;

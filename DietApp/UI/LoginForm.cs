@@ -25,7 +25,7 @@ namespace DietApp
 
         private void GoToRegisterForm()
         {
-            var form = new RegisterForm(db);
+            var form = new RegisterFormLoginPart(db);
             form.Show();
             Hide();
         }
@@ -82,6 +82,11 @@ namespace DietApp
         private void btnGoToPasswordResetForm_Click(object sender, EventArgs e)
         {
             GoToPasswordResetForm();
+        }
+
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Environment.Exit(0);
         }
 
         #endregion
