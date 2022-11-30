@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DietApp.Data;
+using DietApp.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,76 @@ namespace DietApp
 {
     public partial class LoginForm : Form
     {
+        ApplicationDbContext db = new ApplicationDbContext();
+
         public LoginForm()
         {
             InitializeComponent();
         }
+
+        #region Methods
+
+        private void GoToRegisterForm()
+        {
+            var form = new RegisterForm(db);
+            form.Show();
+            Hide();
+        }
+
+        private void GoToPasswordResetForm()
+        {
+            var form = new PasswordResetForm(db);
+            form.Show();
+            Hide();
+        }
+
+        private void GoToMainForm(bool isValid)
+        {
+            if (isValid)
+            {
+                var form = new MainForm(db);
+                form.Show();
+                Hide();
+            }
+            else
+                return;
+        }
+
+        private bool CheckLoginCredentials()
+        {
+            string email = txtEmail.Text.Trim();
+            string password = txtPassword.Text.Trim();
+
+            var user = db.Users.FirstOrDefault(u => u.Email == email);
+
+            if (user == null || password != user.Password)
+            {
+                MessageBox.Show("Please check your login credentials.");
+                return false;
+            }
+            else
+                return true;
+        }
+
+        #endregion
+
+        #region Events
+
+        private void btnGoToMainForm_Click(object sender, EventArgs e)
+        {
+            GoToMainForm(CheckLoginCredentials());
+        }
+
+        private void btnGoToRegisterForm_Click(object sender, EventArgs e)
+        {
+            GoToRegisterForm();
+        }
+
+        private void btnGoToPasswordResetForm_Click(object sender, EventArgs e)
+        {
+            GoToPasswordResetForm();
+        }
+
+        #endregion
     }
 }

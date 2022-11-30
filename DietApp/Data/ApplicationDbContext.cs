@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DietApp.Data.Entities;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -12,5 +13,7 @@ namespace DietApp.Data
         public ApplicationDbContext() : base("name=MyConnection")
         {
         }
+
+        public DbSet<User> Users => Set<User>();
     }
 }
