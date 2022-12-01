@@ -79,6 +79,12 @@
     <Compile Include="UI\PasswordResetForm.Designer.cs">
       <DependentUpon>PasswordResetForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\RegisterFormBodyInfoPart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\RegisterFormBodyInfoPart.Designer.cs">
+      <DependentUpon>RegisterFormBodyInfoPart.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\RegisterFormLoginPart.cs">
       <SubType>Form</SubType>
     </Compile>
