@@ -19,6 +19,7 @@ namespace DietApp
         public LoginForm()
         {
             InitializeComponent();
+            ClearForm();
         }
 
         #region Methods

@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Data\ApplicationDbContext.cs" />
     <Compile Include="Data\Entities\User.cs" />
+    <Compile Include="Data\Enums\Gender.cs" />
     <Compile Include="UI\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\RegisterFormLoginPart.resx">
       <DependentUpon>RegisterFormLoginPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RegisterFormPersonalPart.resx">
+      <DependentUpon>RegisterFormPersonalPart.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

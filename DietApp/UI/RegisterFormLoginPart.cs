@@ -20,6 +20,7 @@ namespace DietApp.UI
         public RegisterFormLoginPart(ApplicationDbContext db)
         {
             InitializeComponent();
+            ClearForm();
             _db = db;
         }
 
